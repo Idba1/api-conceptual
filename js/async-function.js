@@ -6,7 +6,9 @@ console.log("hello from console");
 
 const test = async () => {
     const responsse = await fetch ('https://openapi.programming-hero.com/api/news/categories');
-    console.log(responsse);
+    // console.log(responsse);
+    const data = await responsse.json();
+    console.log(data);
 }
 test();
 
