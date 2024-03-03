@@ -1,6 +1,6 @@
 // console.log('hello');
 
- const loadCategory = async() =>{
+const loadCategory = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/news/categories');
     const data = await response.json();
     // console.log(data.data.news_category);
@@ -14,5 +14,15 @@
         div.innerHTML = `<button>${item.category_name}</button>`;
         categoryContainer.appendChild(div);
     })
- }
- loadCategory();
+}
+
+const loadNews = async() =>{
+    const response = await fetch('https://openapi.programming-hero.com/api/news/category/01');
+    const data = await response.json();
+    // console.log(data.data);
+    data.data.forEach((item) => {
+        console.log(item);
+    })
+}
+loadNews();
+loadCategory();
